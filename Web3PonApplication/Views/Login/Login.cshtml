@@ -1,0 +1,37 @@
+﻿@model Web3PonApplication.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<h2> </h2>
+
+<div>
+
+    <div class="col-md-6">
+        <img src="~/images/login.jpg" height="350" />
+    </div>
+
+    <div class="col-md-6">
+        @using (Html.BeginForm("Authentication", "Login", FormMethod.Post))
+        {
+            <br /><br /><br /><br /><br />
+            <div>@Html.Label("Login name")</div>
+            <div style="color:palevioletred">@Html.TextBoxFor(i => i.UserName) @Html.ValidationMessageFor(x => x.UserName)</div>
+            <br />
+            <div>@Html.Label("Password")</div>
+            <div style="color:palevioletred">@Html.PasswordFor(i => i.Password) @Html.ValidationMessageFor(x => x.Password)</div>
+            <br />
+            <br />
+            <input id="Submit" type="submit" value="Login" />
+            
+        }
+        <br />
+
+        <br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+</div>
+<div>     </div>
+
+

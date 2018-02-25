@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Careers";
+}
+
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<html>
+<body>
+    <div style="width: 1348px; margin-left:-100px;">
+        <img src="~/images/1.jpg" width="1348" />
+    </div>
+    <br /><br /><br />
+    <div>
+       <div id="status" class="text-center" style="font-variant:normal; font-style:normal; font-size:18px; color:rgba(124, 124, 124, 0.59)"></div>
+        <table class="table table-responsive table-hover" id="Jobstable" style="background-color: rgba(219, 215, 215, 0.57)) ,">
+            <tr style="font-variant:normal; font-style:normal; font-size:22px;">
+                <td class="text-danger">Careers</td>
+                <td class="text-primary">Requirements</td>
+            </tr>
+        </table>
+        
+
+
+        <script language="javascript">
+            $("#status").text("Loading...");
+            $.get("GetJobs", null, JobBindData);
+            function JobBindData(jobs) {
+                var tbl = $("#Jobstable");
+                for (j = 0; j < jobs.length ; j++) {
+                    var row = "<tr>" +
+                        "<td>" + jobs[j].JobName + "</td>" +
+                        "<td>" + jobs[j].JobDescription + "</td>" + "</tr>"
+                    tbl.append(row);
+                }
+                $("#status").text("");
+            }
+        </script>
+
+        <br /><br /><br />
+
+    </div>
+</body>
+
+</html>
+

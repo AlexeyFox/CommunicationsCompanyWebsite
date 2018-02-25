@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "WorkerMenu";
+}
+
+
+
+<div style="width: 1348px; margin-left:-100px;">
+    <img src="~/images/notec.jpg" width="1348" />
+</div>
+<br />
+<h3 class="text-center" style="color:rgba(128, 128, 128, 0.66)">Welcome @Context.User.Identity.Name.Split('|')[1]!</h3>
+<br />
+@if (Context.User.Identity.Name.Split('|')[2] == "2")
+{
+    <div class="row text-center">
+        <div class="col-md-4 text-center">
+            <p><a href="../Worker/ChangeInfo"><img src="~/images/icon128-2x.png" height="150" /></a></p>
+        </div>
+        <div class="col-md-4">
+            <p><a href="../Worker/ManagementOfWorkers"><img src="~/images/generic-office-desktop.png" height="150" /></a></p>
+        </div>
+        <div class="col-md-4">
+            <p><a href="../Worker/PrintSuggests"><img src="~/images/suggestion box.png" height="150" /></a></p>
+        </div>
+    </div>
+}
+else if (Context.User.Identity.Name.Split('|')[2] == "1")
+{
+    <div class="row text-center">
+        <div class="col-md-12 text-center">
+            <p><a href="../Worker/ChangeInfo"><img src="~/images/icon128-2x.png" height="150" /></a></p>
+        </div>
+    </div>
+}
+
+        <div style="width: 1348px; margin-left:-100px;">
+            <img src="~/images/noteC2.jpg" width="1348" />
+        </div>
+

@@ -1,0 +1,87 @@
+﻿@model Web3PonApplication.ModelView.SuggestionViewModel
+@using Web3PonApplication.Models;
+@{
+    ViewBag.Title = "SuggestProject";
+    string name = null;
+}
+@{
+    ViewBag.Title = "PrintSuggests";
+}
+
+
+<div style="width: 1348px; margin-left:-100px;">
+    <img src="~/images/school.jpg" width="1348" />
+</div>
+<br />
+<h2 class="text-center" style="color:rgba(131, 131, 131, 0.51)">PrintSuggests</h2>
+<br />
+
+<body>
+    <div>
+        <table class="table table-responsive table-hover" id="Workertable">
+
+
+            <tr style="background-color:rgba(58, 52, 142, 0.10)">
+                <th>
+                    <h3 style="font-size:18px"><span style="font-weight:bolder">ID</span></h3>
+                </th>
+                <th>
+                    <h3 style="font-size:18px"><span style="font-weight:bolder">First Name</span></h3>
+                </th>
+                <th>
+                    <h3 style="font-size:18px"><span style="font-weight:bolder">Last Name</span></h3>
+                </th>
+                <th>
+                    <h3 style="font-size:18px"><span style="font-weight:bolder">Project Name</span></h3>
+                </th>
+                <th>
+                    <h3 style="font-size:18px"><span style="font-weight:bolder">Location</span></h3>
+                </th>
+                <th>
+                    <h3 style="font-size:18px"><span style="font-weight:bolder">Area</span></h3>
+                </th>
+                <th>
+                    <h3 style="font-size:18px"><span style="font-weight:bolder">Type</span></h3>
+                </th>
+                <th>
+                    <h3 style="font-size:18px"><span style="font-weight:bolder"> </span></h3>
+                </th>
+              </tr> 
+            
+            @foreach (Suggestion obj in Model.suggestions)
+            {
+                if (@obj.Type == 1)
+                {
+                    name = "Communication";
+
+                }
+                else if (@obj.Type == 2)
+                {
+                    name = "Electricity";
+                }
+                else
+                {
+                    name = "Communication & Electricity";
+                }
+
+                <tr>
+                    <td>@obj.ID</td>
+                    <td>@obj.FirstName</td>
+                    <td>@obj.LastName</td>
+                    <td>@obj.ProjectName</td>
+                    <td>@obj.Location</td>
+                    <td>@obj.Area</td>
+                    <td>@name</td>
+
+                    <td class="col-lg-2">
+                        <button type="button" class="btn btn-info " style="color:#313131; background-color:rgba(97, 102, 156, 0.31); border:none" onclick="location.href='@Url.Action("Details", "Worker", obj)';return false;"><span style="margin-right: 5px" class="glyphicon glyphicon-align-justify"></span>Details</button>
+                        <button type="button" class="btn btn-danger " style="color:#313131; background-color:#e2aaaa; border:none" onclick="location.href='@Url.Action("Delete", "Worker", obj)' ;return false;"><span style="margin-right: 5px" class="glyphicon glyphicon-trash"></span>Delete</button>
+                    </td>
+                </tr>
+               
+            }
+        </table>
+
+    </div>
+
+</body>

@@ -1,0 +1,61 @@
+﻿@model Web3PonApplication.ModelView.WorkerViewModel
+@using Web3PonApplication.Models;
+
+<div class="col-md-3 text-center">
+    <i>ID</i>
+</div>
+<div style="color:palevioletred">@Html.TextBoxFor(i => i.worker.ID) @Html.ValidationMessageFor(x => x.worker.ID)</div>
+<br />
+<div class="col-md-3 text-center">
+    <i>First Name</i>
+</div>
+<div style="color:palevioletred">@Html.TextBoxFor(i => i.worker.FirstName)@Html.ValidationMessageFor(x => x.worker.FirstName)</div>
+<br />
+<div class="col-md-3 text-center">
+    <i>Last Name</i>
+</div>
+<div style="color:palevioletred">@Html.TextBoxFor(i => i.worker.LastName)  @Html.ValidationMessageFor(x => x.worker.LastName)</div>
+<br />
+<div class="col-md-3 text-center">
+    <i>Phone</i>
+</div>
+<div style="color:palevioletred">@Html.TextBoxFor(i => i.worker.Phone)  @Html.ValidationMessageFor(x => x.worker.Phone)</div>
+<br />
+<div class="col-md-3 text-center">
+    <i>Gender</i>
+</div>
+<div style="color:palevioletred">@Html.TextBoxFor(i => i.worker.Gender)  @Html.ValidationMessageFor(x => x.worker.Gender)</div>
+<br />
+<div class="col-md-3 text-center">
+    <i>Email</i>
+</div>
+<div style="color:palevioletred">@Html.TextBoxFor(i => i.worker.Email)  @Html.ValidationMessageFor(x => x.worker.Email)</div>
+<br />
+<div class="col-md-3 text-center">
+    <i>Date Of Birth</i>
+</div>
+<div style="color:palevioletred">@Html.TextBoxFor(i => i.worker.DateOfBirth)  @Html.ValidationMessageFor(x => x.worker.DateOfBirth)</div>
+<br />
+<div class="col-md-3 text-center">
+    <i>Profession</i>
+</div>
+<div style="color:palevioletred">@Html.TextBoxFor(i => i.worker.Profession)  @Html.ValidationMessageFor(x => x.worker.Profession)</div>
+<br />
+<div class="col-md-3 text-center">
+    <i>UserName</i>
+</div>
+<div style="color:palevioletred">@Html.TextBoxFor(i => i.worker.UserName)  @Html.ValidationMessageFor(x => x.worker.UserName)</div>
+<br />
+<div class="col-md-3 text-center">
+    <i>Password</i>
+</div>
+<div style="color:palevioletred">@Html.PasswordFor(i => i.user.Password)  @Html.ValidationMessageFor(x => x.user.Password)</div>
+<br />
+
+    <div class="col-md-3 text-center">
+        <i>Permission</i>
+    </div>
+    <div style="color:palevioletred">@Html.TextBoxFor(i => i.user.Permission)  @Html.ValidationMessageFor(x => x.user.Permission)</div>
+
+<br />
+<br />

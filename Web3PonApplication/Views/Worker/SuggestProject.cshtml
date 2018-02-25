@@ -1,0 +1,91 @@
+﻿@model Web3PonApplication.ModelView.SuggestionViewModel
+@using Web3PonApplication.Models;
+@{
+        ViewBag.Title = "SuggestProject";
+        string[] check = { "communication", "electricity", "combined" };
+}
+
+
+
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<div style="width: 1348px; margin-left:-100px;">
+    <img src="~/images/99b.jpg" width="1348" />
+</div>
+<h2 class="text-center" style="color:gray">SuggestProject</h2>
+<br />
+<br />
+<body>
+        
+            @using (Html.BeginForm("Send", "Worker", FormMethod.Post))
+            {
+                <div class="col-md-7 text-center">
+                    <div class="col-md-3 text-center">
+                        <i>ID</i>
+                    </div>
+                    <div style="color:palevioletred">@Html.TextBoxFor(i => i.suggestion.ID) @Html.ValidationMessageFor(x => x.suggestion.ID)</div>
+                    <br />
+                    <div class="col-md-3 text-center">
+                        <i>First Name</i>
+                    </div>
+                    <div style="color:palevioletred">@Html.TextBoxFor(i => i.suggestion.FirstName)@Html.ValidationMessageFor(x => x.suggestion.FirstName)</div>
+                    <br />
+                    <div class="col-md-3 text-center">
+                        <i>Last Name</i>
+                    </div>
+                    <div style="color:palevioletred">@Html.TextBoxFor(i => i.suggestion.LastName)  @Html.ValidationMessageFor(x => x.suggestion.LastName)</div>
+                    <br />
+                    <div class="col-md-3 text-center">
+                        <i>Phone</i>
+                    </div>
+                    <div style="color:palevioletred">@Html.TextBoxFor(i => i.suggestion.Phone)  @Html.ValidationMessageFor(x => x.suggestion.Phone)</div>
+                    <br />
+                    <div class="col-md-3 text-center">
+                        <i>Project Name</i>
+                    </div>
+                    <div style="color:palevioletred">@Html.TextBoxFor(i => i.suggestion.ProjectName)  @Html.ValidationMessageFor(x => x.suggestion.ProjectName)</div>
+                    <br />
+                    <div class="col-md-3 text-center">
+                        <i>Description</i>
+                    </div>
+                    <div style="color:palevioletred">@Html.TextAreaFor(i => i.suggestion.Description)  @Html.ValidationMessageFor(x => x.suggestion.Description)</div>
+                    <br />
+                    <div class="col-md-3 text-center">
+                        <i>Location</i>
+                    </div>
+                    <div style="color:palevioletred">@Html.TextBoxFor(i => i.suggestion.Location)  @Html.ValidationMessageFor(x => x.suggestion.Location)</div>
+                    <br />
+                    <div class="col-md-3 text-center">
+                        <i>Area(in meters)</i>
+                    </div>
+                    <div style="color:palevioletred">@Html.TextBoxFor(i => i.suggestion.Area)  @Html.ValidationMessageFor(x => x.suggestion.Area)</div>
+                    <br />
+                    <div class="col-md-3 text-center">
+                        <i>Type</i>
+                    </div>
+                    <label>communication</label><input type="checkbox" name="types" value="1" />
+                    <label>electricity</label><input type="checkbox" name="types" value="2" />
+
+                    <br />
+                    <br />
+                    <input name="submit" id="Add" type="submit" value="Add" />
+                </div>
+                <div class="col-md-4">
+                       <img src="~/images/large.png" width="300" />
+                </div>
+                
+            }
+                
+
+
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
+</body>

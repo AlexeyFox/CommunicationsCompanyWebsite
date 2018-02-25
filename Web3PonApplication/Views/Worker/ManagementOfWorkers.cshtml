@@ -1,0 +1,86 @@
+﻿@model Web3PonApplication.ModelView.WorkerViewModel
+@using Web3PonApplication.Models;
+
+@{
+    ViewBag.Title = "ReenterWorkerInfo";
+}
+
+<h2>ReenterWorkerInfo</h2>
+
+<!DOCTYPE html>
+
+
+<head>
+    <title>Reenter Info</title>
+</head>
+
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+
+<body>
+    <div>
+        <div class="col-md-4 text-center">
+            @using (Html.BeginForm("Add", "Worker", FormMethod.Post))
+            {
+
+                @Html.Partial("EnterWorkerInfo", Model);
+                <input name="submit" id="Add" type="submit" value="Add" />
+            }
+            <br />
+        </div>
+
+                <div class="col-md-6 text-center">
+                    @{
+                        WebGrid obj = new WebGrid(Model.workers);
+                    }
+
+                    @obj.GetHtml()
+                </div>
+            
+       
+
+        <br />
+
+        <table class="table table-responsive table-hover" id="Workertable" style="background-color:gainsboro">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>DateOfBirth</th>
+                <th>Profession</th>
+            </tr>
+        </table>
+
+
+
+        <script language="javascript">
+            $.get("GetCustomers", null, WorkerBindData);
+            function WorkerBindData(workers) {
+                var tbl = $("#Workertable");
+                for (j = 0; j < workers.length ; j++) {
+                    var row = "<tr>" +
+                        "<td>" + workers[j].ID +"</td>" +
+                        "<td>" + workers[j].FirstName + "</td>" +
+                        "<td>" + workers[j].LastName + "</td>" +
+                        "<td>" + workers[j].Phone + "</td>" +
+                        "<td>" + workers[j].Gender + "</td>" +
+                        "<td>" + workers[j].Email + "</td>" +
+                        "<td>" + workers[j].DateOfBirth + "</td>" +
+                        "<td>" + workers[j].Profession + "</td>" + "</tr>"
+                    tbl.append(row);
+                }
+            }
+        </script>
+
+
+
+
+
+        <br /><br /><br />
+    </div>
+</body>

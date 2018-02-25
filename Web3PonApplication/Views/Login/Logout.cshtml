@@ -1,0 +1,35 @@
+﻿@model Web3PonApplication.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<h2> </h2>
+
+<div>
+
+    <div class="col-md-6">
+        <img src="~/images/login.jpg" height="350" />
+    </div>
+
+    <div class="col-md-6">
+        @using (Html.BeginForm("Logout", "Login", FormMethod.Post))
+        {
+            <br /><br /><br /><br /><br />
+            if (Context.User.Identity.IsAuthenticated)
+            {
+                <div>@Html.Label(Context.User.Identity.Name.Split('|')[1])</div>
+            }
+            <br />
+            <br />
+            <br />
+            <input id="Submit" type="submit" value="Logout" />
+            <br />
+        }
+        <br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+</div>
+<div>     </div>
+
+

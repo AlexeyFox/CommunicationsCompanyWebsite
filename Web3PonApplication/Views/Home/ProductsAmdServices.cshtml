@@ -1,0 +1,40 @@
+﻿@model Web3PonApplication.ModelView.ServicesViewModel
+@using Web3PonApplication.Models;
+@{
+    ViewBag.Title = "ProductsAmdServices";
+}
+
+<h2 class="text-center" style="color:rgba(92, 92, 92, 0.66); font-variant:inherit; font-style:normal; font-size:17px;">Products&Services</h2>
+
+
+<head>
+    <title>Reenter Info</title>
+</head>
+<body>
+    <div>
+        
+        <br /><br /><br />
+
+
+
+            @foreach (Service j in Model.services)
+            {
+                <div class="col-md-4">
+                    <br />
+                    <h3 class="text-center" style="font-variant:normal; font-style:normal; font-size:15px;">@j.ServiceName</h3>
+                    <br/>
+                    <img src=@j.Image width="330" />
+                    <br />
+                    <i>@j.ServiceDescription</i>  
+                    <br /><br />            
+                </div>
+             }
+
+
+
+
+    </div>
+</body>
+
+
+

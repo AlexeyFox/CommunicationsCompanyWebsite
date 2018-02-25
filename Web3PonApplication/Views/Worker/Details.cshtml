@@ -1,0 +1,76 @@
+﻿@using Web3PonApplication.Models;
+@{
+    ViewBag.Title = "Details";
+    Suggestion obj = (Suggestion)TempData["details"];
+}
+
+<body>
+    <div>
+        <br /><br /><br />
+        <div class="col-md-3">
+            <img src="~/images/project-manajer.png" width="500" />
+        </div>
+        <div class="col-md-offset-6">
+            <div class="col-md-3 text-center">
+                <label>ID</label>
+            </div>
+            <div style="color:palevioletred">@obj.ID</div>
+            <br />
+            <div class="col-md-3 text-center">
+                <label>First Name</label>
+            </div>
+            <div style="color:palevioletred">@obj.FirstName</div>
+            <br />
+            <div class="col-md-3 text-center">
+                <label>Last Name</label>
+            </div>
+            <div style="color:palevioletred">@obj.LastName</div>
+            <br />
+            <div class="col-md-3 text-center">
+                <label>Phone</label>
+            </div>
+            <div style="color:palevioletred">@obj.Phone</div>
+            <br />
+            <div class="col-md-3 text-center">
+                <label>Project Name</label>
+            </div>
+            <div style="color:palevioletred">@obj.ProjectName</div>
+            <br />
+            <div class="col-md-3 text-center">
+                <label>Description</label>
+            </div>
+            <div style="color:palevioletred">@obj.Description</div>
+            <br />
+            <div class="col-md-3 text-center">
+                <label>Location</label>
+            </div>
+            <div style="color:palevioletred">@obj.Location</div>
+            <br />
+            <div class="col-md-3 text-center">
+                <label>Area</label>
+            </div>
+            <div style="color:palevioletred">@obj.Area</div>
+            <br />
+            <div class="col-md-3 text-center">
+                <label>Type</label>
+            </div>
+            @if (@obj.Type == 1)
+            {
+                <div style="color:palevioletred">Communication</div>
+
+            }
+            else if (@obj.Type == 2)
+            {
+                <div style="color:palevioletred">Electricity</div>
+            }
+            else
+            {
+                <div style="color:palevioletred">Communication & Electricity</div>
+            }
+        </div>
+    </div>
+    <br /><br /><br /><br /><br />
+</body>
+
+<h2> </h2>
+
